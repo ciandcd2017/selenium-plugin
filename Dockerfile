@@ -19,8 +19,10 @@ RUN apt-get -y update
 RUN apt-get -y install firefox
 RUN apt-get -y install xvfb
 RUN apt-get install -y python-minimal
+RUN apt-get autoclean && apt-get clean
 COPY --from=build /Selenium/bin/ /Selenium/bin
 COPY --from=build /usr/local/lib/python2.7/dist-packages /usr/local/lib/python2.7/dist-packages
+COPY ./scripts /Selenium/scripts
 WORKDIR Selenium
 
 ENTRYPOINT ["scripts/init.sh"]
