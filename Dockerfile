@@ -21,6 +21,7 @@ RUN apt-get -y install xvfb
 RUN apt-get install -y python-minimal
 COPY --from=build /Selenium/bin/ /Selenium/bin
 COPY --from=build /usr/local/lib/python2.7/dist-packages /usr/local/lib/python2.7/dist-packages
+WORKDIR Selenium
 
 ENTRYPOINT ["scripts/init.sh"]
 
