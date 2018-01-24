@@ -25,5 +25,5 @@ COPY --from=build /usr/local/lib/python2.7/dist-packages /usr/local/lib/python2.
 COPY ./scripts /Selenium/scripts
 WORKDIR Selenium
 
-ENTRYPOINT ["scripts/init.sh"]
+ENTRYPOINT ["/Selenium/scripts/init.sh"]
 
