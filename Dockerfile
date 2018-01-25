@@ -13,7 +13,7 @@ RUN apt-get install python-pip -y
 RUN pip install -U Selenium
 
 
-FROM ubuntu:17.04
+FROM ubuntu:16.04
 
 RUN apt-get -y update
 RUN apt-get -y install firefox

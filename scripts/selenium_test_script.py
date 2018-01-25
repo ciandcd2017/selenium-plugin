@@ -5,19 +5,18 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import unittest, time, re
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.base_url = "https://www.katalon.com/"
-        self.driver.implicitly_wait(30)
         self.verificationErrors = []
         self.accept_next_alert = True
     
     def test_untitled_test_case(self):
         driver = self.driver
-        driver.get("http://35.225.50.59/login")
+        driver.get("http://${TARGET_HOST}:${TARGET_PORT}/login")
         driver.find_element_by_link_text("I need an account").click()
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("username").clear()
