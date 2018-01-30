@@ -1,4 +1,4 @@
-FROM ubuntu:17.04 AS build
+FROM ubuntu:16.04 AS build
 
 RUN mkdir Selenium
 WORKDIR Selenium
@@ -23,7 +23,6 @@ RUN apt-get autoclean && apt-get clean
 COPY --from=build /Selenium/bin/ /Selenium/bin
 COPY --from=build /usr/local/lib/python2.7/dist-packages /usr/local/lib/python2.7/dist-packages
 COPY ./scripts /Selenium/scripts
-WORKDIR Selenium
 
 ENTRYPOINT ["/Selenium/scripts/init.sh"]
 
