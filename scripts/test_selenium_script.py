@@ -44,7 +44,7 @@ class NewChatAppln(unittest.TestCase):
         driver.find_element_by_id("password-confirm").clear()
         driver.find_element_by_id("password-confirm").send_keys("wipro@123")
         driver.find_element_by_id("submit").click()
-        driver.find_element_by_css_selector("button.confirm").click()
+        #driver.find_element_by_css_selector("button.confirm").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
