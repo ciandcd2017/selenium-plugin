@@ -18,6 +18,7 @@ class UntitledTestCase(unittest.TestCase):
         driver = self.driver
         driver.get("http://${TARGET_HOST}:${TARGET_PORT}/login")         
         driver.find_element_by_link_text("I need an account").click()
+        
         driver.find_element_by_id("username").click()
         driver.find_element_by_id("username").clear()
         driver.find_element_by_id("username").send_keys("alex")
